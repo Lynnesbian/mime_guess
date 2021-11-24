@@ -14,6 +14,7 @@ fn check_type_bounds() {
 }
 
 #[test]
+/// Test guessing MIME type based on file paths and extensions.
 fn test_mime_type_guessing() {
 	assert_eq!(from_ext("gif").first_or_octet_stream().to_string(), "image/gif".to_string());
 	assert_eq!(from_ext("TXT").first_or_octet_stream().to_string(), "text/plain".to_string());
@@ -35,6 +36,7 @@ fn test_mime_type_guessing() {
 }
 
 #[test]
+/// Test that guessing correctly returns the expected `Option`s.
 fn test_mime_type_guessing_opt() {
 	assert_eq!(from_ext("gif").first().unwrap().to_string(), "image/gif".to_string());
 	assert_eq!(from_ext("TXT").first().unwrap().to_string(), "text/plain".to_string());
@@ -48,6 +50,7 @@ fn test_mime_type_guessing_opt() {
 }
 
 #[test]
+/// Ensures that each MIME type listed in MIME_TYPES is valid.
 fn test_are_mime_types_parseable() {
 	for (_, mimes) in MIME_TYPES {
 		mimes.iter().for_each(|s| {
@@ -58,6 +61,7 @@ fn test_are_mime_types_parseable() {
 
 // RFC: Is this test necessary anymore? --@cybergeek94, 2/1/2016
 #[test]
+/// Ensures that all given file extensions are valid ASCII.
 fn test_are_extensions_ascii() {
 	for (ext, _) in MIME_TYPES {
 		assert!(ext.is_ascii(), "Extension not ASCII: {:?}", ext);
@@ -65,6 +69,7 @@ fn test_are_extensions_ascii() {
 }
 
 #[test]
+/// Ensures that extensions are sorted.
 fn test_are_extensions_sorted() {
 	// simultaneously checks the requirement that duplicate extension entries are adjacent
 	for (&(ext, _), &(n_ext, _)) in MIME_TYPES.iter().zip(MIME_TYPES.iter().skip(1)) {
@@ -79,6 +84,7 @@ fn test_are_extensions_sorted() {
 }
 
 #[test]
+/// Ensures that [`get_mime_extensions_str`] does not panic when given an invalid MIME type.
 fn test_get_mime_extensions_str_no_panic_if_bad_mime() {
 	assert_eq!(get_mime_extensions_str(""), None);
 }
