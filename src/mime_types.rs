@@ -650,7 +650,7 @@ pub static MIME_TYPES: &[(&str, &[&str])] = &[
 	("m3a", &["audio/mpeg"]),
 	("m3u", &["audio/x-mpegurl", "application/vnd.apple.mpegurl"]),
 	("m3u8", &["audio/x-mpegurl"]),
-	("m4a", &["audio/m4a", "audio/mp4"]),
+	("m4a", &["audio/mp4", "audio/m4a"]),
 	("m4b", &["audio/m4b"]),
 	("m4p", &["audio/m4p", "audio/mp4", "application/mp4"]),
 	("m4r", &["audio/x-m4r"]),
