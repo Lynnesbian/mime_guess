@@ -106,7 +106,7 @@ impl MimeGuess {
 	/// Get the first guessed Media Type as a string, if applicable.
 	///
 	/// See [Note: Ordering](#note-ordering) above.
-	pub fn first_raw(&self) -> Option<&'static str> { self.0.get(0).copied() }
+	pub fn first_raw(&self) -> Option<&'static str> { self.0.first().copied() }
 
 	/// Get the first guessed `Mime`, or if the guess is empty, return
 	/// [`application/octet-stream`] instead.
