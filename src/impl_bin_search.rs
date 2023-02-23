@@ -2,7 +2,7 @@ use unicase::UniCase;
 
 use crate::mime_types::MIME_TYPES;
 
-include!(concat!(env!("OUT_DIR"), "/mime_types_generated.rs"));
+include!(env!("MIME_TYPES_GENERATED_PATH"));
 
 #[cfg(feature = "rev-mappings")]
 #[derive(Copy, Clone)]
