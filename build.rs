@@ -14,7 +14,7 @@ mod mime_types;
 const PHF_PATH: &str = "phf";
 
 fn main() {
-    let out_dir = env::var("OUT_DIR").unwrap();
+    let out_dir = std::env::var("OUT_DIR").unwrap();
     let dest_path = Path::new(&out_dir).join("mime_types_generated.rs");
     let mut outfile = BufWriter::new(File::create(&dest_path).unwrap());
 

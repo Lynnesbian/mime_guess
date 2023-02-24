@@ -4,6 +4,11 @@ Dates are given in YYYY-MM-DD format - for example, the 15th of October 2021 is 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 4.0.1 - 2023-02-23
+### Changed
+- Merge upstream changes
+	- Use platform-specific path separators in `build.rs` (thanks to [this PR](https://github.com/abonander/mime_guess/pull/79))
+
 ## 4.0.0 - 2021-11-25
 ### Changed
 - **Breaking:** Increased MSRV to 1.48.0
