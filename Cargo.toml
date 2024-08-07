@@ -1,7 +1,7 @@
 [package]
 
 name = "new_mime_guess"
-version = "4.0.3"
+version = "4.0.4"
 authors = ["Austin Bonander <austin.bonander@gmail.com>", "Lynnesbian <lynne@bune.city>"]
 license = "MIT"
 description = "A simple crate for associating MIME types to file extensions."
