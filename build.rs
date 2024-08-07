@@ -14,14 +14,11 @@ mod mime_types;
 const PHF_PATH: &str = "phf";
 
 fn main() {
-    let out_dir = std::env::var("OUT_DIR").unwrap();
-    let dest_path = Path::new(&out_dir).join("mime_types_generated.rs");
-    let mut outfile = BufWriter::new(File::create(&dest_path).unwrap());
+	let out_dir = std::env::var("OUT_DIR").unwrap();
+	let dest_path = Path::new(&out_dir).join("mime_types_generated.rs");
+	let mut outfile = BufWriter::new(File::create(&dest_path).unwrap());
 
-    println!(
-        "cargo:rustc-env=MIME_TYPES_GENERATED_PATH={}",
-        dest_path.display()
-    );
+	println!("cargo:rustc-env=MIME_TYPES_GENERATED_PATH={}", dest_path.display());
 
 	#[cfg(feature = "phf-map")]
 	build_forward_map(&mut outfile);
